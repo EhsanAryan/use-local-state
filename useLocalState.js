@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react"
 
-export const useLocalState = (key, onInvalidValue) => {
+export const useLocalState = (key, initialValue = null, onInvalidValue) => {
     const [value, setValue] = useState(() => {
         const localValue = localStorage.getItem(key);
-        if (!localValue) return null;
-        if (localValue.trim() === "undefined") return null;
+        if (!localValue) return initialValue;
+        if (localValue.trim() === "undefined") return initialValue;
         try {
             return JSON.parse(localValue);
         } catch {
-            return null;
+            return initialValue;
         }
     });
 
