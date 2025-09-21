@@ -5,6 +5,7 @@ A React custom hook to sync state with localStorage safely.
 ## Installation:
 ```bash
 npm install use-local-state-hook
+```
 
 
 ## Features:
