@@ -1,6 +1,6 @@
 {
   "name": "use-local-state-hook",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A custom hook to synchronize the state value with localStorage",
   "homepage": "https://github.com/EhsanAryan/use-local-state-hook#readme",
   "bugs": {

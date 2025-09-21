@@ -15,7 +15,7 @@ export const useLocalState = (key, initialValue = null, onInvalidValue) => {
     useEffect(() => {
         let toStore;
         if (value instanceof File || value instanceof Blob) {
-            if (typeof onInvalidValue === "function") {
+            if (onInvalidValue && typeof onInvalidValue === "function") {
                 // callback for invalid values
                 onInvalidValue(value);
             } else {
