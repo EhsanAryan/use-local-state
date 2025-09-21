@@ -1,0 +1,20 @@
+{
+  "name": "use-local-state-hook",
+  "version": "1.0.3",
+  "description": "A custom hook to synchronize the state value with localStorage",
+  "homepage": "https://github.com/EhsanAryan/use-local-state#readme",
+  "bugs": {
+    "url": "https://github.com/EhsanAryan/use-local-state/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EhsanAryan/use-local-state.git"
+  },
+  "license": "ISC",
+  "author": "Ehsan Aryan",
+  "type": "commonjs",
+  "main": "useLocalState.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
