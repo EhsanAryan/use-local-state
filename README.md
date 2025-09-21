@@ -16,6 +16,7 @@ npm install use-local-state-hook
 
 
 ## Usage:
+```js
 import { useLocalState } from "use-local-state-hook";
 
 function App() {
@@ -30,4 +31,4 @@ function App() {
     />
   );
 }
-
+```
