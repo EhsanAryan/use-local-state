@@ -2,17 +2,17 @@
 A React custom hook to sync state with localStorage safely.
 
 
-## Installation:
-```bash
-npm install use-local-state-hook
-```
-
-
 ## Features:
 - Automatically syncs with localStorage
 - Converts undefined to null
 - Warns if a File or Blob is passed
 - Optional callback for invalid values
+
+
+## Installation:
+```bash
+npm install use-local-state-hook
+```
 
 
 ## Usage:
