@@ -15,8 +15,7 @@ npm install use-local-state-hook
 - Optional callback for invalid values
 
 
-## Usage:
-```js
+## Usage: ```js
 import { useLocalState } from "use-local-state-hook";
 
 function App() {
