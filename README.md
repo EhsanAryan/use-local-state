@@ -22,6 +22,7 @@ npm install use-local-state-hook
 ```js
 import { useLocalState } from "use-local-state-hook";
 
+// inside the component
 const [state, setState] = useLocalState("key");
 ```
 
