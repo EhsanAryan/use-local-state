@@ -34,7 +34,7 @@ import { useLocalState } from "use-local-state-hook";
 
 export default function App() {
   const [value, setValue] = useLocalState("myKey", (invalidValue) => {
-    alert("Cannot store File/Blob! Saving null instead.");
+    console.error("Cannot store File/Blob! Saving null instead.");
   });
 
   return (
