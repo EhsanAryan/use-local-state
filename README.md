@@ -22,6 +22,15 @@ npm install use-local-state-hook
 ```js
 import { useLocalState } from "use-local-state-hook";
 
+const [state, setState] = useLocalState("key");
+```
+
+---
+
+## Example:
+```js
+import { useLocalState } from "use-local-state-hook";
+
 function App() {
   const [value, setValue] = useLocalState("myKey", (invalidValue) => {
     alert("Cannot store File/Blob! Saving null instead.");
