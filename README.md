@@ -5,10 +5,8 @@ A React custom hook to sync state with localStorage safely.
 
 ## Features:
 - Automatically syncs with localStorage
-- Set initial value if localStorage is empty
-- Converts undefined to null
-- Warns if a File or Blob is passed
-- Optional callback for invalid values
+- Set initial value if a key has no value in localStorage
+- Optional callback for invalid values (File or Blob or Function)
 
 ---
 
@@ -35,7 +33,7 @@ import { useLocalState } from "use-local-state-hook";
 
 export default function App() {
   const [value, setValue] = useLocalState("myKey", "", (invalidValue) => {
-    console.error("Cannot store File/Blob! Saving null instead.");
+    console.error("Cannot store File/Blob or Function in localStorage!");
   });
 
   return (
