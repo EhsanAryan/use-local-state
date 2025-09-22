@@ -13,21 +13,31 @@ export const useLocalState = (key, initialValue = null, onInvalidValue) => {
     });
 
     useEffect(() => {
-        let toStore;
-        if (value instanceof File || value instanceof Blob) {
+        if (value instanceof File || value instanceof Blob || typeof value === "function") {
             if (onInvalidValue && typeof onInvalidValue === "function") {
                 // callback for invalid values
                 onInvalidValue(value);
             } else {
                 console.warn(
-                    `⚠️ The value of ${key} is a File/Blob. Cannot store File/Blob in localStorage. Saving null instead.`
+                    `⚠️ The value of ${key} is a File/Blob or Function. Cannot store File/Blob or Function in localStorage.`
                 );
             }
-            toStore = null;
-        } else {
-            toStore = value === undefined ? null : value;
+            return;
         }
-        localStorage.setItem(key, JSON.stringify(toStore));
+        if (value === undefined || value === null) return;
+
+        try {
+            localStorage.setItem(key, JSON.stringify(value));
+        } catch (error) {
+            if (
+                error.name === "QuotaExceededError" ||
+                error.name === "NS_ERROR_DOM_QUOTA_REACHED"
+            ) {
+                console.error(`⛔ localStorage is full! Could not save value of ${key}`);
+            } else {
+                console.error(`⛔ Something went wrong! Could not save value of ${key}`);
+            }
+        }
     }, [key, value, onInvalidValue]);
 
     return [value, setValue];
